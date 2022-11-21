@@ -37,7 +37,4 @@ def dbGet():
             else:
                 Lunch.append(i)
 
-    print(Lunch)
     return (Date, Lunch)
-     
-dbGet()
