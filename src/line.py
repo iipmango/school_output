@@ -1,7 +1,7 @@
 import requests
 import urllib
 import json
-import dbcon
+from dbcon import dbGet
 import datetime
 
 token = 'R0F5lpR51XrvM0gDRxvHT8abopYd04vE6oPYMIqghau'
@@ -13,7 +13,7 @@ def send():
     
     Date = []
     Lunch = []
-    Date, Lunch = dbcon.dbGet()
+    Date, Lunch = dbGet()
     payload = 'message="' + Date[today] + Lunch[today] + '"'
     headers = {
         'Content-Type' : "application/x-www-form-urlencoded",
