@@ -22,5 +22,3 @@ def send():
     response = requests.request("POST", url, data = payload.encode('utf-8'), headers = headers)
     responseJson = json.loads(((response.text).encode('utf-8')))
     return responseJson
-
-print(send())

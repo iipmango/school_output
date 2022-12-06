@@ -18,4 +18,3 @@ def tts():
     tts.save("helloKR.mp3")
     
     os.system("mpg321 helloKR.mp3")
-
