@@ -1,6 +1,6 @@
 from gtts import gTTS
 import os
-import dbcon
+from .dbcon import dbGet
 import datetime
 
 def tts():
@@ -8,7 +8,7 @@ def tts():
     
     Date = []
     Lunch = []
-    Date, Lunch = dbcon.dbGet()
+    Date, Lunch = dbGet()
     menu = Lunch[today].split("\n")
     text = ""
     for i in range(4,10):

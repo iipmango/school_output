@@ -4,13 +4,13 @@ from src import *
 
 switch = 23
 
-GPIO.sermode(GPIO.BCM)
+GPIO.setmode(GPIO.BCM)
 GPIO.setup(switch, GPIO.IN)
 
 try:
     while True:
         if GPIO.input(switch) == True:
             tts()
-            send
+            send()
 except KeyboardInterrupt:
     GPIO.cleanup()

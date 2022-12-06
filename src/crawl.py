@@ -3,7 +3,6 @@ from bs4 import BeautifulSoup
 import ssl
 import json
 import time
-import dbcon
 
 menu_date = []
 menu = []
@@ -26,4 +25,3 @@ def crawl():
 
     dbcon.dbInsert(json.dumps(menu_date, ensure_ascii = False), json.dumps(menu, ensure_ascii = False))
             
-crawl()
