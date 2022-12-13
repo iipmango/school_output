@@ -11,6 +11,8 @@ def tts():
     Lunch = []
     Date, Lunch = dbcon.dbGet()
     menu = Lunch[today].split("\n")
+    if Lunch[today + 7].split("\n"):
+        menu += Lunch[today + 7].split("\n")
     text = ""
     print(menu)
     size = len(menu)
@@ -19,11 +21,7 @@ def tts():
             continue
         else:
             text += menu[i]
-                
-    print(text)
-    # tts = gTTS(text = text, lang = 'ko')
-    # tts.save("helloKR.mp3")
+    tts = gTTS(text = text, lang = 'ko')
+    tts.save("helloKR.mp3")
     
-    # os.system("mpg321 helloKR.mp3")
-    
-tts()
+    os.system("mpg321 helloKR.mp3")
