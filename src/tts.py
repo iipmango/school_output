@@ -1,6 +1,7 @@
 from gtts import gTTS
 import os
-from .dbcon import dbGet
+import dbcon
+# from .dbcon import dbGet
 import datetime
 
 def tts():
@@ -8,14 +9,21 @@ def tts():
     
     Date = []
     Lunch = []
-    Date, Lunch = dbGet()
+    Date, Lunch = dbcon.dbGet()
     menu = Lunch[today].split("\n")
     text = ""
-    for i in range(4,100):
-        text += menu[i]
-    
+    print(menu)
+    size = len(menu)
+    for i in range(0, size):
+        if menu[i] == '':
+            continue
+        else:
+            text += menu[i]
+                
     print(text)
     # tts = gTTS(text = text, lang = 'ko')
     # tts.save("helloKR.mp3")
     
     # os.system("mpg321 helloKR.mp3")
+    
+tts()

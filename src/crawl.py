@@ -25,7 +25,5 @@ def crawl():
         menu.append(text.text.strip())
     if link[2]:
         for text in link[2]:
-            menu.append(text.text.strip())
-
+            menu.append(text.text.strip())ß
     dbcon.dbInsert(json.dumps(menu_date, ensure_ascii = False), json.dumps(menu, ensure_ascii = False))
-            
