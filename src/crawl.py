@@ -3,10 +3,6 @@ from bs4 import BeautifulSoup
 import ssl
 import json
 import time
-<<<<<<< HEAD
-=======
-from dbcon import dbInsert
->>>>>>> a93772c88b752ddf4dd64e10d8c63c58b550ec59
 
 menu_date = []
 menu = []
@@ -27,9 +23,5 @@ def crawl():
     for text in link[1]:
         menu.append(text.text.strip())
 
-<<<<<<< HEAD
     dbcon.dbInsert(json.dumps(menu_date, ensure_ascii = False), json.dumps(menu, ensure_ascii = False))
             
-=======
-    dbInsert(json.dumps(menu_date, ensure_ascii = False), json.dumps(menu, ensure_ascii = False))
->>>>>>> a93772c88b752ddf4dd64e10d8c63c58b550ec59
