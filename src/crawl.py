@@ -1,5 +1,6 @@
 from urllib.request import urlopen
 from bs4 import BeautifulSoup
+from .dbcon import dbInsert
 import ssl
 import json
 import time
@@ -23,5 +24,5 @@ def crawl():
     for text in link[1]:
         menu.append(text.text.strip())
 
-    dbcon.dbInsert(json.dumps(menu_date, ensure_ascii = False), json.dumps(menu, ensure_ascii = False))
+    dbInsert(json.dumps(menu_date, ensure_ascii = False), json.dumps(menu, ensure_ascii = False))
             

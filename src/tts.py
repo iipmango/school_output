@@ -11,10 +11,13 @@ def tts():
     Date, Lunch = dbGet()
     menu = Lunch[today].split("\n")
     text = ""
-    for i in range(4,):
+    for i in range(4,100):
         text += menu[i]
     
-    tts = gTTS(text = text, lang = 'ko')
-    tts.save("helloKR.mp3")
+    print(text)
+    # tts = gTTS(text = text, lang = 'ko')
+    # tts.save("helloKR.mp3")
     
-    os.system("mpg321 helloKR.mp3")
+    # os.system("mpg321 helloKR.mp3")
+
+tts()
