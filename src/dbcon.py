@@ -36,6 +36,4 @@ def dbGet():
                 continue
             else:
                 Lunch.append(i)
-
     return (Date, Lunch)
-

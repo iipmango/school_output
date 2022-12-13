@@ -23,6 +23,10 @@ def crawl():
         menu_date.append(text.text.strip())
     for text in link[1]:
         menu.append(text.text.strip())
+    if link[2]:
+        for text in link[2]:
+            menu.append(text.text.strip())
 
     dbInsert(json.dumps(menu_date, ensure_ascii = False), json.dumps(menu, ensure_ascii = False))
             
+crawl()
