@@ -14,7 +14,10 @@ def send():
     Date = []
     Lunch = []
     Date, Lunch = dbGet()
-    payload = 'message="' + Date[today] + Lunch[today] + '"'
+    if Lunch[today + 7]:
+        payload = 'message="' + Date[today] + Lunch[today] + Lunch[today + 7] + '"'
+    else:
+        payload = 'message="' + Date[today] + Lunch[today] + '"'
     headers = {
         'Content-Type' : "application/x-www-form-urlencoded",
         'Authorization' : 'Bearer ' + token,
