@@ -11,7 +11,9 @@ def tts():
     Date, Lunch = dbGet()
     menu = Lunch[today].split("\n")
     text = ""
-    for i in range(4,10):
+    for i in range(4,):
+	if menu[i] == None:
+		break
         text += menu[i]
     
     tts = gTTS(text = text, lang = 'ko')
